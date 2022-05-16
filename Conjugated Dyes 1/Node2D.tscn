@@ -1,0 +1,164 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Node2D.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+Dropdown_path = NodePath("Dropdown")
+
+[node name="plot" type="Line2D" parent="."]
+position = Vector2( 229.821, 341.601 )
+scale = Vector2( 0.0167054, 0.0759229 )
+points = PoolVector2Array( 5451.37, 2054.37, 23712.3, 2081.01, 44862.1, 2093.17 )
+width = 20.0
+
+[node name="Save" type="Button" parent="."]
+margin_left = 168.363
+margin_top = 184.858
+margin_right = 263.363
+margin_bottom = 228.858
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_left = 162.0
+margin_top = 103.0
+margin_right = 774.0
+margin_bottom = 432.0
+access = 2
+current_dir = "/Users/Adam.Mansell/Documents/My Games/Conjugated Dyes 1"
+current_path = "/Users/Adam.Mansell/Documents/My Games/Conjugated Dyes 1/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x-axis" type="Label" parent="."]
+margin_left = 311.0
+margin_top = 520.0
+margin_right = 1006.0
+margin_bottom = 559.0
+text = "200              300              400              500              600              700              800              900            1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="y-axis" type="Label" parent="."]
+margin_left = 282.439
+margin_top = 64.7149
+margin_right = 321.439
+margin_bottom = 503.715
+text = "
+
+
+
+
+2.0
+
+
+
+
+1.5
+
+
+
+
+1.0
+
+
+
+
+0.5
+
+
+
+
+0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Make Solution" type="Button" parent="."]
+margin_left = 16.8451
+margin_top = 186.98
+margin_right = 118.845
+margin_bottom = 230.98
+text = "Make Solution"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 13.9638
+margin_top = 68.5303
+margin_right = 136.964
+margin_bottom = 99.5303
+text = "Dye 
+(in microliters)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Label3"]
+margin_left = 242.908
+margin_top = 339.544
+margin_right = 388.908
+margin_bottom = 367.544
+rect_rotation = -89.9999
+text = "Absorbance"
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 151.019
+margin_top = 68.3121
+margin_right = 255.019
+margin_bottom = 99.3121
+text = "Methanol 
+(in microliters)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="solvent_box" type="SpinBox" parent="."]
+margin_left = 169.019
+margin_top = 119.312
+margin_right = 243.019
+margin_bottom = 143.312
+max_value = 2000.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dye_box" type="SpinBox" parent="."]
+margin_left = 39.9638
+margin_top = 118.53
+margin_right = 113.964
+margin_bottom = 142.53
+max_value = 2000.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dropdown" type="OptionButton" parent="."]
+margin_left = 20.8975
+margin_top = 25.57
+margin_right = 153.898
+margin_bottom = 45.57
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 573.578
+margin_top = 543.272
+margin_right = 681.578
+margin_bottom = 557.272
+text = "Wavelength (nm)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Save" to="." method="_on_Save_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="pressed" from="Make Solution" to="." method="_on_Make_Solution_pressed"]
